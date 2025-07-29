@@ -47,7 +47,7 @@ export default function Home() {
         </span>
       </div>
       <div className="flex items-center justify-center w-screen">
-        <div className="flex flex-col p-4 space-y-2 border rounded-lg border-foreground/20">
+        <div className="flex flex-col p-4 space-y-2 border rounded-lg border-foreground/20 w-[90vw] md:w-auto">
           <span>Our members:</span>
           <span className="inline-grid grid-cols-3 md:grid-cols-5 gap-4 place-items-center">
             {members.map((member, i) => (
@@ -62,13 +62,15 @@ export default function Home() {
                     width={64}
                     height={64}
                     className={`rounded-full ${i === 0
-                        ? "border-2 p-0.5 border-yellow-400 outline-offset-8"
-                        : ""
+                      ? "border-2 p-0.5 border-yellow-400 outline-offset-8"
+                      : ""
                       }`}
                   />
                 </a>
-                <span>
-                  {member.name} • {member.pronouns}
+                <span className="inline-flex flex-col md:flex-row items-center space-x-2">
+                  <span>
+                    {member.name}
+                  </span>
                 </span>
               </div>
             ))}
