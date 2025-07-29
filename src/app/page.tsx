@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BackgroundPaths from "./components/background-paths";
 
 type RainWorksMember = {
   name: string;
@@ -26,13 +27,14 @@ const members: RainWorksMember[] = [
 export default function Home() {
   return (
     <>
+      <BackgroundPaths />
       <div className="flex flex-col items-center justify-center w-screen min-h-screen space-y-2">
         <h1 className="text-5xl">rainworks.club</h1>
         <p className="text-center max-w-[80vw]">
           We are a self-governed team of programmers building the solutions for
           tomorrow&apos;s problems.
         </p>
-        <span className="px-4 py-2 rounded-md border-foreground/20 border-1">
+        <span className="px-4 py-2 rounded-md border-foreground/20 border backdrop-blur-md">
           <p>
             Check out our{" "}
             <a
@@ -47,7 +49,7 @@ export default function Home() {
         </span>
       </div>
       <div className="flex items-center justify-center w-screen">
-        <div className="flex flex-col p-4 space-y-2 border rounded-lg border-foreground/20 w-[90vw] md:w-auto">
+        <div className="flex flex-col p-4 space-y-2 border rounded-lg border-foreground/20 w-[90vw] md:w-auto backdrop-blur-md">
           <span>Our members:</span>
           <span className="inline-grid grid-cols-3 md:grid-cols-5 gap-4 place-items-center">
             {members.map((member, i) => (
@@ -79,7 +81,7 @@ export default function Home() {
       </div>
       <div className="h-20" />
       <div className="flex flex-col items-center justify-center">
-        <div className="p-4 max-w-[90vw] md:max-w-[50vw] space-y-2 flex flex-col border rounded-lg border-foreground/20">
+        <div className="p-4 max-w-[90vw] md:max-w-[50vw] space-y-2 flex flex-col border rounded-lg border-foreground/20 backdrop-blur-md">
           <span>Our beliefs:</span>
           <span className="inline-flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
             <p className="border border-foreground/20 p-2 rounded-sm">
@@ -101,7 +103,7 @@ export default function Home() {
         </div>
       </div>
       <div className="h-20" />
-      <footer className="w-fit mx-auto border border-foreground/20 rounded-lg p-2">
+      <footer className="mx-auto border border-foreground/20 rounded-lg p-2 w-[90vw] md:w-fit backdrop-blur-md">
         <span className="text-foreground/80">
           rainworks.club is an initiative led by{" "}
           <a
